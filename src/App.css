@@ -1,3 +1,9 @@
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button-column-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.link-long-button {
+  padding: 10px 35px;
+  text-decoration: none;
+  border: 1px solid blue;
+  margin: 7px 0;
+  background-color: #f4e8d8;
+}
+.btn-active:active {
+  opacity: 0.5;
 }

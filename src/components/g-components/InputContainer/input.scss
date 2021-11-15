@@ -1,0 +1,107 @@
+@use "./../../../styles/core_style.scss" as *;
+
+.mainInputContainer {
+  .inputContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    input {
+      width: 100%;
+      min-height: 60px;
+      margin: auto;
+      background-color: transparent;
+      padding-left: 20px;
+      border: 2px solid;
+      border-color: $color-super-faded-black;
+      outline: none;
+      border-radius: 5px;
+      // &:focus {
+      //   border-color: $color-deep-blue;
+      // }
+    }
+    .placeholderContainer {
+      $transition-delay: 0.25s;
+      position: absolute;
+      top: 50%;
+      transform: translate(0%, -50%);
+      z-index: -1;
+      background-color: #fff;
+      transition: transform #{$transition-delay}, top #{$transition-delay},
+        color #{$transition-delay};
+      .placeholderText {
+        padding: 5px 20px;
+        color: $color-faded-black;
+      }
+    }
+  }
+
+  .inputContainerFilled {
+    input {
+    }
+
+    .placeholderContainer {
+      z-index: 2;
+      top: 0%;
+      transform: translate(0%, -50%) scale(0.8);
+      .placeholderText {
+      }
+    }
+  }
+
+  .inputContainerActive{
+    input {
+      border-color: $color-deep-blue;
+    }
+
+    .placeholderContainer {
+      z-index: 2;
+      top: 0%;
+      transform: translate(0%, -50%) scale(0.8);
+      .placeholderText {
+        color: $color-deep-blue;
+      }
+    }
+  }
+
+  .inputContainerErr {
+    input {
+      border-color: $color-err-red;
+    }
+
+    .placeholderContainer {
+      .placeholderText {
+        color: $color-err-red;
+      }
+    }
+  }
+
+  .errorContainer {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+
+    .icon {
+      margin-right: 10px;
+      font-size: $font-small-text;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .err {
+        font-size: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-err-red;
+        svg {
+          font-size: inherit;
+        }
+      }
+    }
+    p {
+      font-size: $font-small-text;
+    }
+  }
+}
